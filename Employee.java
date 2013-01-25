@@ -1,33 +1,41 @@
 public abstract class Employee{
 	private String job;
-	private int baseSalary;
-	private int effectivnessMultiplier;
-	private int paymentToDate;
+	private double baseSalary;
+	private double effectivnessMultiplier;
+	private double paymentToDate;
 	
-	public Employee(String j, int bS){
+	public Employee(){
 		effectivnessMultiplier = 1;
 		paymentToDate = 0;
 	}
 	
-	public void setJob(passIn){
+	public void setJob(String passIn){
 		job = passIn;
 	}
-	public void setBaseSalary(cashMoney){
+	public void setBaseSalary(double cashMoney){
 		baseSalary = cashMoney;
 	}
-	public int getBaseSalary(){
+	public double getBaseSalary(){
 		return baseSalary;
 	}
 	public abstract void work();
 	
 	public void earnPaycheck(){
-		paymentToDate = paymentToDate + (getBaseSalary() * effectivnessMultiplier);
+		paymentToDate = paymentToDate + getBaseSalary() + (getEffectivnessMultiplier() * 10);
 	}
-	public void earnBonus(amount){
+	public void earnBonus(double amount){
 		paymentToDate = paymentToDate + amount;
 	}
+	public void setEffectivnessMultiplier(double pass){
+		effectivnessMultiplier = getEffectivnessMultiplier() + pass;
+		if(getEffectivnessMultiplier() < 0){
+			effectivnessMultiplier = 0;
+		}
+	}
+	public double getEffectivnessMultiplier(){
+		return effectivnessMultiplier;
+	}
 	public String getStatus(){
-		effectivnessMultiplier = 1;
 		return job + " has a base salary of " + baseSalary + ", has an effectiveness multiplier of " + effectivnessMultiplier + ", and has earned " + paymentToDate + " to date";
 	}
 }

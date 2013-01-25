@@ -11,7 +11,7 @@ public class Simulator{
 		week = 0;
 		day = 0;
 		worker = new Employee[6];
-		TastebudStylist t = new TastebudStylist();
+		TasteBudStylist t = new TasteBudStylist();
 		Moover m = new Moover();	
 		Shaker s = new Shaker();
 		for(int i = 0; i < 2; i++){
@@ -49,6 +49,9 @@ public class Simulator{
 			worker[i].earnPaycheck();
 			b = b + ", " + worker[i].getStatus();
 		}
-		System.out.println(b);	
+		System.out.println(b);
+		for(int i = 0; i < worker.length; i++){
+			worker[i].setEffectivnessMultiplier(((worker[i].getEffectivnessMultiplier())* -1) + 1);		
+		}
 	}
 }

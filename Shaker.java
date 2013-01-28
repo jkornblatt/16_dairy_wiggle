@@ -1,3 +1,4 @@
+// @BC: What a beautifully simple class here! Bravo!
 import java.util.Random;
 public class Shaker extends Employee{
 	public Shaker(){

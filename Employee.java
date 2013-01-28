@@ -8,7 +8,7 @@ public abstract class Employee{
 		effectivnessMultiplier = 1;
 		paymentToDate = 0;
 	}
-	
+	// @BC: Great touch -- very valuable to have this handy
 	public void setJob(String passIn){
 		job = passIn;
 	}
@@ -27,6 +27,7 @@ public abstract class Employee{
 		paymentToDate = paymentToDate + amount;
 	}
 	public void setEffectivnessMultiplier(double pass){
+		// @BC: Very thoughtfully done! Nice job.
 		effectivnessMultiplier = getEffectivnessMultiplier() + pass;
 		if(getEffectivnessMultiplier() < 0){
 			effectivnessMultiplier = 0;

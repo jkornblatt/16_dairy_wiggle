@@ -11,6 +11,8 @@ public class TasteBudStylist extends Employee{
 	}
 	public void makeShake(int chanceOfIssue){
 		if(chanceOfIssue > 89){
+			// @BC: Due to the complexity of your mutator method, this call ends up being excessively complicated.
+			//		Maybe add a resetEM() method?
 			setEffectivnessMultiplier(((getEffectivnessMultiplier())*-1)+1);
 		}else{
 			setEffectivnessMultiplier(.1);

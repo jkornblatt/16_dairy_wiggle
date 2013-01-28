@@ -25,11 +25,13 @@ public class Simulator{
 		}
 		
 		for(int i = 0; i < 24; i++){
+			// @BC: Beware of magic numbers! Can you think of how to implement this using the % operator?
 			if(i == 3 || i == 7 || i == 11 || i == 15 || i == 19 || i == 23){
 				Random r = new Random();
 				int myNum = r.nextInt(6);
 				worker[myNum].earnBonus(100);
 			}
+			// @BC: I'm a bit confused by your implementation here. Why is j counting to 6? If it's not days per week or an iterator for the workers...?
 			for(int j = 0; j < 6; j++){
 				for (int k = 0; k < worker.length; k++){
 					worker[k].work();
@@ -43,6 +45,7 @@ public class Simulator{
 			}
 		}
 	}
+	// @BC: The output is barely legible at this point. Definitely a spot to consider improving next time.
 	public void printWeeklySummary(){
 		String b = "";
 		for(int i = 0; i < worker.length; i++){
